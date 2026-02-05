@@ -6,7 +6,7 @@ theme = 'archie'
 [params]
   mode = "toggle"
   useCDN = false
-  subtitle = "-rwxr-xr-x`"
+  subtitle = "-rwxr-xr-x"
   mathjax = true
   katex = true
 
