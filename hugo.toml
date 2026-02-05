@@ -1,0 +1,45 @@
+baseURL = 'https://wahidkadwaikar.github.io/personal-blog'
+languageCode = 'en-us'
+title = 'Letters from L1'
+theme = 'archie'
+
+[params]
+  mode = "toggle"
+  useCDN = false
+  subtitle = "A simple blog built with Hugo"
+  mathjax = true
+  katex = true
+
+# Social Tags
+[[params.social]]
+  name = "GitHub"
+  icon = "github"
+  url = "https://github.com/wahidkadwaikar"
+
+[[params.social]]
+  name = "Twitter"
+  icon = "twitter"
+  url = "https://twitter.com/wahidkadwaikar"
+
+[[params.social]]
+  name = "Email"
+  icon = "email"
+  url = "mailto:your.email@example.com"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "All posts"
+    url = "/posts"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 3
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4
