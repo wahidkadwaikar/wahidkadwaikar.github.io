@@ -6,7 +6,7 @@ theme = 'archie'
 [params]
   mode = "toggle"
   useCDN = false
-  subtitle = "A simple blog built with Hugo"
+  subtitle = "-rwxr-xr-x`"
   mathjax = true
   katex = true
 
@@ -15,11 +15,6 @@ theme = 'archie'
   name = "GitHub"
   icon = "github"
   url = "https://github.com/wahidkadwaikar"
-
-[[params.social]]
-  name = "Email"
-  icon = "email"
-  url = "mailto:your.email@example.com"
 
 [menu]
   [[menu.main]]
