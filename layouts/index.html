@@ -19,7 +19,7 @@
 					<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 				</section>
 				{{ end }}
-				{{ template "partials/paginator.html" . }}
+				{{ partial "pagination.html" . }}
 			</main>
 			{{ partial "footer.html" . }}
 		</div>
