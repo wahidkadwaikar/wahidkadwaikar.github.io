@@ -35,7 +35,7 @@ theme = 're-terminal'
 [languages]
   [languages.en.params]
     languageName = "English"
-    subtitle = "-rwxr-xr-x"
+    subtitle = "-rwxr--r--"
     owner = ""
     keywords = ""
     copyright = ""
