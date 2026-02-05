@@ -1,0 +1,21 @@
+/* Custom styles for blog post titles on home page */
+.list-item .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.list-item .title a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.list-item .title a:hover {
+  text-decoration: underline;
+}
+
+.list-item time {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
