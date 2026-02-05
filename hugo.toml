@@ -1,35 +1,82 @@
 baseURL = 'https://wahidkadwaikar.github.io'
 languageCode = 'en-us'
 title = 'Letters from L1'
-theme = 'archie'
+theme = 're-terminal'
 
 [params]
-  mode = "toggle"
-  useCDN = false
-  subtitle = "-rwxr-xr-x"
-  mathjax = true
-  katex = true
+  # dir name of your main content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
 
-# Social Tags
-[[params.social]]
-  name = "GitHub"
-  icon = "github"
-  url = "https://github.com/wahidkadwaikar"
+  # ["orange", "blue", "red", "green", "pink", "paper"]
+  themeColor = "blue"
 
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "All posts"
-    url = "/posts"
-    weight = 2
-  [[menu.main]]
-    name = "About"
-    url = "/about"
-    weight = 3
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags"
-    weight = 4
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 4
+
+  # show selector to switch language
+  showLanguageSelector = false
+
+  # set theme to full screen width
+  fullWidthTheme = false
+
+  # center theme with default width
+  centerTheme = false
+
+  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
+  # then the file will be used as a cover automatically.
+  # With this option you don't have to put the `cover` param in a front-matter.
+  autoCover = true
+
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  showLastUpdated = false
+
+[languages]
+  [languages.en.params]
+    languageName = "English"
+    subtitle = "-rwxr-xr-x"
+    owner = ""
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "Back to home page"
+    minuteReadingTime = "min read"
+    words = "words"
+
+    [languages.en.params.logo]
+      logoText = "Letters from L1"
+      logoHomeLink = "/"
+
+    # Social Tags
+    [[languages.en.params.social]]
+      name = "GitHub"
+      icon = "github"
+      url = "https://github.com/wahidkadwaikar"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
+        weight = 1
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "All posts"
+        url = "/posts"
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+        weight = 3
+      [[languages.en.menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags"
+        weight = 4
