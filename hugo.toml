@@ -17,11 +17,6 @@ theme = 'archie'
   url = "https://github.com/wahidkadwaikar"
 
 [[params.social]]
-  name = "Twitter"
-  icon = "twitter"
-  url = "https://twitter.com/wahidkadwaikar"
-
-[[params.social]]
   name = "Email"
   icon = "email"
   url = "mailto:your.email@example.com"

@@ -17,7 +17,6 @@ Welcome to my personal blog! I'm passionate about technology, programming, and s
 
 Feel free to reach out to me through:
 - GitHub: [@wahidkadwaikar](https://github.com/wahidkadwaikar)
-- Twitter: [@wahidkadwaikar](https://twitter.com/wahidkadwaikar)
 - Email: [wahidkadwaikar@gmail.com](mailto:wahidkadwaikar@gmail.com)
 
 Thanks for visiting! 🚀
