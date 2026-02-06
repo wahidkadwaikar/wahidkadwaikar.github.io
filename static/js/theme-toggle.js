@@ -10,7 +10,6 @@
     try {
       return window.localStorage.getItem(storageKey);
     } catch (error) {
-      void error;
       return null;
     }
   };
@@ -19,7 +18,7 @@
     try {
       window.localStorage.setItem(storageKey, theme);
     } catch (error) {
-      void error;
+      return;
     }
   };
 
