@@ -43,7 +43,8 @@
 
   setTheme(getPreferredTheme());
 
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
     const nextTheme =
       document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     setTheme(nextTheme);
