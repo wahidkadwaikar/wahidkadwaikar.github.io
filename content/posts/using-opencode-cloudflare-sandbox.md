@@ -1,7 +1,7 @@
 ---
 title: "Running OpenCode from Cloudflare Sandbox"
 date: 2026-02-04
-draft: false
+draft: true
 tags: ["opencode", "cloudflare", "ai", "cli", "sandbox"]
 categories: ["Tutorial"]
 ---
