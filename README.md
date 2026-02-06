@@ -64,6 +64,14 @@ personal-blog/
 
 This blog uses the [Archie](https://github.com/athul/archie) theme.
 
+## 📸 Screenshots
+
+### Light mode
+![Light mode screenshot](static/images/screenshots/light-mode.png)
+
+### Dark mode
+![Dark mode screenshot](static/images/screenshots/dark-mode.png)
+
 ## 🌐 Deployment
 
 The site is automatically deployed to GitHub Pages when you push to the `main` branch. See `.github/workflows/hugo.yml` for the deployment configuration.
