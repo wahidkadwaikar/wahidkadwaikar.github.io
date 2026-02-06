@@ -50,7 +50,7 @@
 html[data-theme="dark"] {
   color-scheme: dark;
   --accent-contrast-color: black;
-  --article-link-color: var(inherit);
+  --article-link-color: inherit;
   --background: color-mix(in srgb, var(--accent) 2%, #1d1e28 98%);
   --border-color: rgba(255, 255, 255, 0.1);
   --color: white;
@@ -73,7 +73,7 @@ html[data-theme="dark"] {
 html[data-theme="light"] {
   color-scheme: light;
   --accent-contrast-color: white;
-  --article-link-color: var(inherit);
+  --article-link-color: inherit;
   --background: color-mix(in srgb, var(--accent) 2%, #fefcfa 98%);
   --border-color: rgba(0, 0, 0, 0.1);
   --color: black;
