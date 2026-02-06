@@ -33,7 +33,7 @@
 
   const setTheme = (theme) => {
     document.documentElement.setAttribute("data-theme", theme);
-    toggle.textContent = theme === "dark" ? "☀️" : "🌙";
+    toggle.textContent = theme === "dark" ? "Light" : "Dark";
     toggle.setAttribute(
       "aria-label",
       theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
@@ -43,7 +43,8 @@
 
   setTheme(getPreferredTheme());
 
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
     const nextTheme =
       document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     setTheme(nextTheme);
