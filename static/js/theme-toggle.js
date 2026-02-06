@@ -10,6 +10,7 @@
     try {
       return window.localStorage.getItem(storageKey);
     } catch (error) {
+      void error;
       return null;
     }
   };
@@ -17,7 +18,9 @@
   const safeStorageSet = (theme) => {
     try {
       window.localStorage.setItem(storageKey, theme);
-    } catch (error) {}
+    } catch (error) {
+      void error;
+    }
   };
 
   const getPreferredTheme = () => {
