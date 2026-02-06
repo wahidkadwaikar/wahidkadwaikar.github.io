@@ -6,8 +6,22 @@
     return;
   }
 
+  const safeStorageGet = () => {
+    try {
+      return window.localStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const safeStorageSet = (theme) => {
+    try {
+      window.localStorage.setItem(storageKey, theme);
+    } catch (error) {}
+  };
+
   const getPreferredTheme = () => {
-    const storedTheme = window.localStorage.getItem(storageKey);
+    const storedTheme = safeStorageGet();
     if (storedTheme) {
       return storedTheme;
     }
@@ -22,7 +36,7 @@
       "aria-label",
       theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
     );
-    window.localStorage.setItem(storageKey, theme);
+    safeStorageSet(theme);
   };
 
   setTheme(getPreferredTheme());
