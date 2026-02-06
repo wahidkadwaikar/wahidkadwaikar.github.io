@@ -33,7 +33,7 @@
 
   const setTheme = (theme) => {
     document.documentElement.setAttribute("data-theme", theme);
-    toggle.textContent = theme === "dark" ? "Light" : "Dark";
+    toggle.textContent = theme === "dark" ? "☀️" : "🌙";
     toggle.setAttribute(
       "aria-label",
       theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
