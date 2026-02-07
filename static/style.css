@@ -1,23 +1,127 @@
-/* Custom styles for blog post titles on home page */
-.list-item .title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  line-height: 1.4;
+/* ===================================================
+   Custom overrides to create a clean, minimal blog theme
+   inspired by farayan.me
+   =================================================== */
+
+/* --- CSS Variables --- */
+:root {
+  color-scheme: light;
+  --accent: #2563eb;
+  --accent-contrast-color: white;
+  --article-link-color: #2563eb;
+  --background: #ffffff;
+  --border-color: #e5e7eb;
+  --color: #1a1a2e;
+  --color-secondary: #6b7280;
+  --menu-color: #374151;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, Consolas, monospace;
+  --syntax-func-color: #2563eb;
+  --syntax-var-color: #7c3aed;
+  --syntax-punctuation-color: #374151;
+  --syntax-value-color: #059669;
+  --syntax-comment-color: #9ca3af;
+  --syntax-line-highlight-background-color: rgba(37, 99, 235, 0.08);
+  --syntax-line-highlight-color: #1a1a2e;
+  --syntax-code-border-color: #e5e7eb;
+  --syntax-code-copy-button-background: rgba(0, 0, 0, 0.05);
+  --syntax-code-copy-button-color: #6b7280;
+  --syntax-code-copy-button-box-shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-.list-item .title a {
+/* --- Web Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* --- Base Typography --- */
+body {
+  font-family: var(--font-body) !important;
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  background-color: var(--background) !important;
+  color: var(--color) !important;
+  font-feature-settings: normal;
+  font-variant-ligatures: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Headings --- */
+.headings--one-size h1,
+.headings--one-size h2,
+.headings--one-size h3,
+.headings--one-size h4,
+.headings--one-size h5,
+.headings--one-size h6 {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color);
+}
+
+.headings--one-size h1,
+.headings--one-size h2 {
+  font-size: 1.5rem !important;
+}
+
+.headings--one-size h3 {
+  font-size: 1.25rem !important;
+}
+
+.headings--one-size h4,
+.headings--one-size h5,
+.headings--one-size h6 {
+  font-size: 1.1rem !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading) !important;
+}
+
+/* --- Links --- */
+a {
+  color: var(--article-link-color);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.15s ease;
 }
 
-.list-item .title a:hover {
+a:hover {
+  color: #1d4ed8;
+}
+
+.post-content a {
+  color: var(--article-link-color);
   text-decoration: underline;
+  text-decoration-color: rgba(37, 99, 235, 0.3);
+  text-underline-offset: 2px;
 }
 
-.list-item time {
-  font-size: 0.9rem;
-  opacity: 0.8;
+.post-content a:hover {
+  text-decoration-color: var(--article-link-color);
+}
+
+/* --- Container --- */
+.container {
+  max-width: 720px !important;
+  padding: 40px 20px !important;
+  border-right: none !important;
+}
+
+.container.center {
+  margin: 0 auto !important;
+}
+
+/* --- Header --- */
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 0;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header__right {
@@ -26,25 +130,346 @@
   gap: 0.5rem;
 }
 
-:root {
-  color-scheme: light;
-  --accent-contrast-color: white;
-  --article-link-color: inherit;
-  --background: color-mix(in srgb, var(--accent) 2%, #fefcfa 98%);
-  --border-color: rgba(0, 0, 0, 0.1);
-  --color: black;
-  --menu-color: black;
-  --syntax-func-color: color-mix(in srgb, var(--accent) 70%, #000 30%);
-  --syntax-var-color: color-mix(in srgb, var(--accent) 90%, #000);
-  --syntax-punctuation-color: black;
-  --syntax-value-color: color-mix(in srgb, var(--accent), black);
-  --syntax-comment-color: rgba(0, 0, 0, 0.3);
-  --syntax-line-highlight-mix: color-mix(in srgb, var(--accent) 90%, #000 10%);
-  --syntax-line-highlight-background-color: hsla(24, 20%, 50%, 0.4);
-  --syntax-line-highlight-color: hsl(24, 20%, 95%);
-  --syntax-line-highlight-box-shadow: black;
-  --syntax-code-border-color: rgba(0, 0, 0, 0.1);
-  --syntax-code-copy-button-background: hsla(360, 0%, 87.8%, 0.2);
-  --syntax-code-copy-button-color: #444;
-  --syntax-code-copy-button-box-shadow-color: rgba(255, 255, 255, 0.2);
+/* Remove the repeating gradient decoration from the logo */
+.header__logo::after,
+.header .header__logo::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* --- Logo --- */
+.logo {
+  background: transparent !important;
+  color: var(--color) !important;
+  padding: 0 !important;
+  font-family: var(--font-heading) !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.logo:hover {
+  color: var(--accent) !important;
+}
+
+/* --- Navigation Menu --- */
+.navigation-menu {
+  font-family: var(--font-body) !important;
+}
+
+.navigation-menu__inner {
+  border-top: none !important;
+  border-bottom: none !important;
+  padding: 0.5rem 0 !important;
+  margin-top: 0.5rem !important;
+}
+
+.navigation-menu__inner li a,
+.menu__trigger {
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500;
+  color: var(--menu-color) !important;
+  text-decoration: none;
+}
+
+.navigation-menu__inner li a:hover {
+  color: var(--accent) !important;
+}
+
+/* --- Site Description (subtitle) --- */
+.site-description {
+  margin-bottom: 2rem;
+}
+
+.site-description p {
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  font-family: var(--font-body) !important;
+}
+
+/* --- Post List on Homepage --- */
+.list-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item .title {
+  font-family: var(--font-heading) !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.list-item .title a {
+  color: var(--color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.list-item .title a:hover {
+  color: var(--accent);
+}
+
+.list-item time {
+  font-family: var(--font-body) !important;
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  opacity: 1;
+}
+
+/* --- Single Post --- */
+.post {
+  border-bottom: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Remove terminal-style dotted border from post title */
+.post-title {
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-family: var(--font-heading) !important;
+  font-size: 2rem !important;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.post-title::after {
+  display: none !important;
+}
+
+/* Post meta info */
+.post-meta {
+  color: var(--color-secondary) !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 2rem !important;
+  font-family: var(--font-body) !important;
+  opacity: 1 !important;
+}
+
+.post-meta a {
+  color: var(--color-secondary) !important;
+}
+
+/* Post tags */
+.post-tags {
+  opacity: 1 !important;
+}
+
+.post-tags a {
+  color: var(--accent) !important;
+  font-size: 0.85rem;
+  font-family: var(--font-body) !important;
+}
+
+/* Post cover image */
+.post-cover {
+  border: none !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Post content */
+.post-content {
+  font-family: var(--font-body) !important;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color);
+}
+
+.post-content p {
+  margin-bottom: 1.25rem;
+}
+
+.post-content h2 {
+  font-size: 1.5rem !important;
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-content h3 {
+  font-size: 1.25rem !important;
+  margin-top: 2rem;
+}
+
+/* --- Code Blocks --- */
+code, kbd {
+  font-family: var(--font-mono) !important;
+  background: #f3f4f6 !important;
+  color: #1a1a2e !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.875rem !important;
+}
+
+pre {
+  background: #f8f9fa !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  overflow-x: auto;
+}
+
+pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 0.875rem !important;
+  color: var(--color) !important;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: 3px solid var(--accent) !important;
+  margin: 1.5rem 0 !important;
+  padding: 0.5rem 0 0.5rem 1.25rem !important;
+  color: var(--color-secondary);
+  font-style: italic;
+}
+
+blockquote p:first-of-type::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* --- Tables --- */
+table, th, td {
+  border: 1px solid var(--border-color) !important;
+  border-style: solid !important;
+  font-family: var(--font-body) !important;
+}
+
+th {
+  color: var(--color) !important;
+  font-weight: 600;
+  background: #f9fafb;
+}
+
+td {
+  font-size: 0.9rem;
+}
+
+/* --- Lists --- */
+ol {
+  list-style: decimal !important;
+  counter-reset: none !important;
+}
+
+ol > li::before {
+  display: none !important;
+  content: none !important;
+}
+
+ul li, ol li {
+  font-family: var(--font-body) !important;
+  margin-bottom: 0.25rem;
+}
+
+/* --- Horizontal Rule --- */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border-color);
+  margin: 2rem 0;
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-body) !important;
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+}
+
+/* --- Pagination --- */
+.pagination {
+  font-family: var(--font-body) !important;
+}
+
+.pagination a {
+  color: var(--accent) !important;
+}
+
+/* --- Terms / Tags page --- */
+.terms {
+  font-family: var(--font-body) !important;
+}
+
+/* --- Anchor links on headings --- */
+.hanchor {
+  color: var(--accent) !important;
+  text-decoration: none !important;
+}
+
+/* --- Mark / Highlight --- */
+mark {
+  background: rgba(37, 99, 235, 0.15) !important;
+  color: var(--color) !important;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+/* --- Figure captions --- */
+figure figcaption {
+  background: transparent !important;
+  color: var(--color-secondary) !important;
+  font-size: 0.85rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* --- Mobile menu --- */
+.menu-trigger,
+.mobile-menu-trigger {
+  font-family: var(--font-body) !important;
+}
+
+/* --- Syntax highlighting overrides for light theme --- */
+.highlight pre {
+  background: #f8f9fa !important;
+}
+
+/* --- Print styles --- */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .header, footer, .pagination {
+    display: none !important;
+  }
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 684px) {
+  .container {
+    padding: 20px 16px !important;
+  }
+
+  .post-title {
+    font-size: 1.5rem !important;
+  }
+
+  .list-item .title {
+    font-size: 1.1rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.3rem !important;
+  }
 }
