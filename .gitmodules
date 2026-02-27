@@ -1,3 +1,3 @@
-[submodule "themes/re-terminal"]
-	path = themes/re-terminal
-	url = https://github.com/mirus-ua/hugo-theme-re-terminal.git
+[submodule "themes/kagami"]
+	path = themes/kagami
+	url = https://github.com/mayocream/hugo-theme-kagami.git

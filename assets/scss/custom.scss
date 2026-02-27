@@ -1,0 +1,217 @@
+/* Homepage: align with site rhythm and tone */
+.home-page {
+  --home-bg: #fff;
+  --home-text: #3c3c3c;
+  --home-muted: #8c8c8c;
+  --home-subtle: #6c6c6c;
+
+  min-height: 100vh;
+  background: var(--home-bg);
+  color: var(--home-text);
+  font-family: "Noto Serif", serif;
+  padding: 2.75rem 0 4rem;
+  line-height: 1.6;
+}
+
+.home-shell {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media screen and (min-width: 680px) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.home-hero {
+  margin-bottom: 112px;
+}
+
+.home-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 28px;
+}
+
+.home-name {
+  font-family: "Noto Serif", serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+  color: var(--home-text);
+}
+
+.home-intro {
+  font-family: "Noto Serif", serif;
+  color: var(--home-subtle);
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 540px;
+  margin: 0;
+}
+
+.home-social {
+  margin-top: 36px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.home-social a {
+  width: 32px;
+  height: 32px;
+  color: var(--home-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.home-social a svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+.home-social a:hover,
+.home-social a:focus-visible {
+  color: var(--home-text);
+}
+
+.home-section {
+  margin-top: 16px;
+}
+
+.home-section:nth-child(3) {
+  margin-top: 48px;
+}
+
+.home-section h2 {
+  margin: 0 0 16px;
+  font-size: 1.1em;
+  font-family: "Noto Serif", serif;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  font-variant-caps: all-petite-caps;
+}
+
+.home-section h2 a {
+  color: var(--home-muted);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.home-section h2 a:hover,
+.home-section h2 a:focus-visible {
+  color: var(--home-text);
+}
+
+.home-list,
+.home-projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-list a {
+  font-family: "Noto Serif", serif;
+  color: var(--home-text);
+  text-decoration: none;
+  font-size: 1.1em;
+  line-height: 1.6;
+  font-weight: 400;
+  border-bottom: none;
+  box-shadow: none;
+  background: transparent;
+  transition: border-bottom 150ms ease;
+}
+
+.home-list a:hover,
+.home-list a:focus {
+  border-bottom: 2px solid #000;
+}
+
+.home-projects li a {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-decoration: none;
+  align-items: baseline;
+  line-height: 1.6;
+}
+
+.project-title {
+  font-family: "Noto Serif", serif;
+  color: var(--home-text);
+  font-size: 1.1em;
+  font-weight: 400;
+  border-bottom: none;
+  box-shadow: none;
+  background: transparent;
+  transition: border-bottom 150ms ease;
+}
+
+.project-title:hover,
+.project-title:focus {
+  border-bottom: 2px solid #000;
+}
+
+.project-summary {
+  font-family: "Noto Serif", serif;
+  color: var(--home-muted);
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .home-page {
+    padding: 1.5rem 0 2.6rem;
+  }
+
+  .home-hero {
+    margin-bottom: 83px;
+  }
+
+  .home-avatar {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .home-social {
+    margin-top: 24px;
+    gap: 14px;
+  }
+
+  .home-section {
+    margin-top: 12px;
+  }
+
+  .home-section h2 {
+    font-size: 1em;
+  }
+
+  .home-list a,
+  .project-title,
+  .project-summary {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  .home-list,
+  .home-projects {
+    gap: 8px;
+  }
+}

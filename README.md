@@ -29,6 +29,18 @@ A fast and flexible static site generator built with love by [bep], [spf13], and
 
 ---
 
+## Site-specific notes
+
+- Active theme: [`themes/kagami`](https://github.com/mayocream/hugo-theme-kagami) (git submodule).
+- The previous `re-terminal` theme has been removed.
+- A local override exists at `layouts/partials/head.html` to keep Kagami compatible with newer Hugo versions (`.Site.Params.author` and `css.Sass`).
+
+### Theme submodule maintenance
+
+```bash
+git submodule update --init --recursive
+```
+
 [![GoDoc](https://godoc.org/github.com/gohugoio/hugo?status.svg)](https://godoc.org/github.com/gohugoio/hugo)
 [![Tests on Linux, MacOS and Windows](https://github.com/gohugoio/hugo/workflows/Test/badge.svg)](https://github.com/gohugoio/hugo/actions?query=workflow%3ATest)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gohugoio/hugo)](https://goreportcard.com/report/github.com/gohugoio/hugo)

@@ -2,8 +2,9 @@
 title: "TypeScript: Unions of Interfaces"
 date: 2025-10-09
 draft: false
+toc: true
 tags: ["typescript", "programming", "interfaces", "types"]
-categories: ["Tutorial"]
+categories: ["Programming"]
 ---
 
 TypeScript's type system offers powerful ways to combine and shape data structures. Unions of interfaces (or object types) are one of the most useful patterns for modeling data that can take multiple forms. Let's explore how to use them effectively.

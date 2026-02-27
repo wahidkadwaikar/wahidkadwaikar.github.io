@@ -2,8 +2,9 @@
 title: "Type Annotations vs Type Assertions in TypeScript"
 date: 2025-10-09
 draft: false
+toc: true
 tags: ["typescript", "programming", "types", "javascript"]
-categories: ["Tutorial"]
+categories: ["Programming"]
 ---
 
 TypeScript offers two ways to assign types to variables: type annotations and type assertions. Though they may seem similar, they serve different purposes. Understanding the distinction is crucial for writing safe and maintainable TypeScript code.

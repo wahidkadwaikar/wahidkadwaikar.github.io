@@ -1,18 +1,39 @@
 {{ define "main" }}
-<main class="list">
-	<div class="site-description">
-		{{- if isset .Site.Params "subtitle" -}}
-		<p>{{ .Site.Params.Subtitle | .Page.RenderString }}</p>
-		{{- end -}}
-	</div>
-	{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-	{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-	{{ range $paginator.Pages }}
-	<section class="list-item">
-		<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
-		<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
-	</section>
-	{{ end }}
-	{{ partial "pagination.html" . }}
-</main>
+<section class="home-page">
+    <div class="home-shell">
+        <header class="home-hero">
+            <img class="home-avatar" src="https://github.com/wahidkadwaikar.png" alt="Wahid Kadwaikar" />
+            <h1 class="home-name">Wahid Kadwaikar</h1>
+            <p class="home-intro">I'm a software builder writing about the tools I use, the tools I build, and currently
+                tinkering with AI.</p>
+        </header>
+
+        <section class="home-section">
+            <h2><a href="/posts/">Writing <span aria-hidden="true">›</span></a></h2>
+            <ul class="home-list">
+                {{ range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </section>
+
+        <section class="home-section">
+            <h2><a href="/projects/">Projects</a></h2>
+            <ul class="home-projects">
+                <li>
+                    <a href="https://useyanki.dev">
+                        <span class="project-title">yanki</span>
+                        <span class="project-summary">Burn-after-read encrypted secret links.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/wahidkadwaikar/sync-storage">
+                        <span class="project-title">sync-storage</span>
+                        <span class="project-summary">Simple cloud key-value storage for apps.</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</section>
 {{ end }}
