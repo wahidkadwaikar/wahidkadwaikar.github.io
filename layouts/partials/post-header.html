@@ -1,0 +1,9 @@
+<header class="post-header">
+    <div class="post-header-content">
+        <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ .Date | time.Format "January 2, 2006" }}</time>
+            <span class="reading-time">{{ .ReadingTime }} min read</span>
+        </div>
+    </div>
+</header>

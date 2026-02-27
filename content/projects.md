@@ -3,9 +3,9 @@ title: "PROJECTS"
 date: 2026-01-01
 ---
 
-### [Yanki](https://useyanki.dev)
+### [yanki](https://useyanki.dev)
 
-Yanki encrypts your secret on your machine, uploads only encrypted data, and burns the note on read.
+yanki encrypts your secret on your machine, uploads only encrypted data, and burns the note on read.
 
 ### [sync-storage](https://github.com/wahidkadwaikar/sync-storage)
 
