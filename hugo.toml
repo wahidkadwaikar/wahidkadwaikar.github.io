@@ -1,6 +1,6 @@
 baseURL = 'https://wahidkadwaikar.github.io'
 languageCode = 'en-us'
-title = 'Letters from L1'
+title = 'Wahid Kadwaikar'
 theme = 'kagami'
 
 [pagination]
@@ -9,7 +9,6 @@ theme = 'kagami'
 [params]
   mainSections = ["posts"]
   description = "Personal notes on software, systems, and engineering."
-  title = "Letters from L1"
   author = "Wahid Kadwaikar"
 
   [params.social]
