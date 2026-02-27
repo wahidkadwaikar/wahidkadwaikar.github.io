@@ -121,7 +121,7 @@
 }
 
 .home-hero {
-  margin-bottom: 112px;
+  margin-bottom: 60px;
 }
 
 .home-avatar {
@@ -150,6 +150,35 @@
   font-weight: 400;
   max-width: 540px;
   margin: 0 0 8px;
+}
+
+.breathing-indicator {
+  width: 20px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1px;
+  margin: 20px auto;
+  animation: breathing 4s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode--activated .breathing-indicator {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes breathing {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
 .home-divider {
@@ -336,7 +365,7 @@
 }
 
 .home-section {
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .home-section:nth-child(3) {
@@ -460,5 +489,9 @@
   .home-list,
   .home-projects {
     gap: 8px;
+  }
+
+  .breathing-indicator {
+    margin: 24px auto;
   }
 }

@@ -17,7 +17,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700|Press+Start+2P" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif:wght@300;400&family=Noto+Serif+JP:wght@300;400&family=Noto+Serif+SC:wght@300;400&family=Source+Code+Pro:wght@300;400" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif:wght@300;400&family=Noto+Serif+JP:wght@300;400&family=Noto+Serif+SC:wght@300;400&family=Source+Code+Pro:wght@300;400"
+    rel="stylesheet">
 
   {{- $slice := slice }}
   {{- $customCSS := resources.Get "scss/custom.scss" }}
@@ -33,7 +35,7 @@
   <link rel="stylesheet" href="{{ $bundleCSS | safeHTML }}" media="all">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot/dist/tocbot.css">
 
-  <link rel="icon" href="{{ .Site.Params.favicon_url | default "/favicon.ico" }}" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   {{- hugo.Generator }}
 
@@ -42,7 +44,9 @@
   {{- end }}
 
   {{- range .AlternativeOutputFormats }}
-  {{ printf `<link rel="%s" type="%s" href="%s" hreflang="%s">` .Rel .MediaType.Type .Permalink ($.Site.LanguageCode | default "en-us") | safeHTML }}
+  {{ printf `
+  <link rel="%s" type="%s" href="%s" hreflang="%s">` .Rel .MediaType.Type .Permalink ($.Site.LanguageCode | default
+  "en-us") | safeHTML }}
   {{- end }}
 
   {{- template "_internal/opengraph.html" . }}
