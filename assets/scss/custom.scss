@@ -92,6 +92,238 @@
   font-weight: 600;
 }
 
+/* Post typography normalization to match homepage */
+.post-layout {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #3c3c3c;
+  line-height: 1.6;
+}
+
+.post-layout article {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.post-layout .post-content {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #3c3c3c;
+}
+
+.post-layout .post-content h1,
+.post-layout .post-content h2,
+.post-layout .post-content h3,
+.post-layout .post-content h4,
+.post-layout .post-content h5,
+.post-layout .post-content h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  color: #3c3c3c;
+  line-height: 1.3;
+}
+
+.post-layout .post-content h1 {
+  font-size: 1.8em;
+}
+
+.post-layout .post-content h2 {
+  font-size: 1.4em;
+}
+
+.post-layout .post-content h3 {
+  font-size: 1.2em;
+}
+
+.post-layout .post-content h4 {
+  font-size: 1.1em;
+}
+
+.post-layout .post-content h5 {
+  font-size: 1em;
+}
+
+.post-layout .post-content h6 {
+  font-size: 0.9em;
+}
+
+.post-layout .post-content p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #3c3c3c;
+  margin-bottom: 1rem;
+}
+
+.post-layout .post-content a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #3c3c3c;
+  text-decoration: none;
+  border-bottom: 2px solid #CBF8DF;
+  box-shadow: inset 0 -4px 0 #CBF8DF;
+  background: transparent;
+  transition: background 150ms ease;
+}
+
+.post-layout .post-content a:hover,
+.post-layout .post-content a:focus {
+  background: #CBF8DF;
+}
+
+/* Header styling to match homepage */
+.post-layout .post-header {
+  margin-bottom: 2rem;
+}
+
+.post-layout .post-header .post-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.8em;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #3c3c3c;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Ensure all typeface variations use system fonts */
+.post-layout .typeface-fallback,
+.post-layout .typeface-serif,
+.post-layout .typeface-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.post-layout .post-content code {
+  font-family: 'JetBrains Mono', 'Source Code Pro', monospace;
+  font-size: 0.8em;
+  background: #f5f5f5;
+  color: #333;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.post-layout .post-content pre {
+  font-family: 'JetBrains Mono', 'Source Code Pro', monospace;
+  background: #f5f5f5;
+  color: #333;
+  padding: 1rem;
+  border-radius: 3px;
+  overflow-x: auto;
+  tab-size: 2;
+  line-height: 1.5;
+  margin: 1rem 0;
+  font-size: 0.8em;
+}
+
+.post-layout .post-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  display: block;
+  white-space: pre;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Dark mode code styling */
+.darkmode--activated .post-layout .post-content code {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+.darkmode--activated .post-layout .post-content pre {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+.darkmode--activated .post-layout .post-content pre code {
+  color: inherit;
+}
+
+/* Table styling */
+.post-layout .post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95em;
+  border: 1px solid #ddd;
+}
+
+.post-layout .post-content th,
+.post-layout .post-content td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.post-layout .post-content th:last-child,
+.post-layout .post-content td:last-child {
+  border-right: none;
+}
+
+.post-layout .post-content th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.post-layout .post-content tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.post-layout .post-content tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dark mode table styling */
+.darkmode--activated .post-layout .post-content table {
+  border-color: #444;
+}
+
+.darkmode--activated .post-layout .post-content th,
+.darkmode--activated .post-layout .post-content td {
+  border-color: #444;
+  border-bottom-color: #444;
+  border-right-color: #444;
+}
+
+.darkmode--activated .post-layout .post-content th {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+
+.darkmode--activated .post-layout .post-content tr:nth-child(even) {
+  background-color: #252525;
+}
+
+.darkmode--activated .post-layout .post-content tr:hover {
+  background-color: #333;
+}
+
+.post-layout .post-content blockquote {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-style: italic;
+  color: #666;
+  border-left: 3px solid #ddd;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.post-layout .post-content ul,
+.post-layout .post-content ol {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #3c3c3c;
+}
+
+.post-layout .post-footer {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #8c8c8c;
+  font-size: 0.875em;
+}
+
 /* Homepage: align with site rhythm and tone */
 .home-page {
   --home-bg: #fff;
