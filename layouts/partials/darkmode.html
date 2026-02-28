@@ -1,0 +1,98 @@
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  // Initialize darkmode without showing the widget
+  const opts = {
+    bottom: '32px', // default: '32px'
+    right: 'unset', // default: '32px'
+    left: '32px', // default: 'unset'
+    time: '0.3s', // default: '0.3s'
+    mixColor: '#fff', // default: '#fff'
+    backgroundColor: '#fff', // default: '#fff'
+    buttonColorDark: '#100f2c', // default: '#100f2c'
+    buttonColorLight: '#fff', // default: '#fff'
+    saveInCookies: true, // default: true,
+    label: '🌓', // default: ''
+    autoMatchOsTheme: true // default: true
+  }
+
+  // Create darkmode instance but don't show widget
+  const darkmode = new Darkmode(opts)
+  window.darkmode = darkmode
+
+  // Custom theme toggle function
+  function toggleTheme() {
+    darkmode.toggle()
+    updateThemeToggle()
+  }
+
+  // Update theme toggle button icon
+  function updateThemeToggle() {
+    const toggle = document.getElementById('theme-toggle')
+    if (toggle) {
+      const icon = toggle.querySelector('svg')
+      const isDark = darkmode.isActivated()
+
+      if (isDark) {
+        // Sun icon for switching to light mode
+        icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+      } else {
+        // Moon icon for switching to dark mode
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
+      }
+    }
+  }
+
+  // Initialize theme toggle button state
+  document.addEventListener('DOMContentLoaded', function () {
+    updateThemeToggle()
+    document.body.style.opacity = 1
+  })
+
+  // Make toggleTheme available globally
+  window.toggleTheme = toggleTheme
+</script>
+
+<style>
+  /* Theme toggle button styles */
+  .theme-toggle {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: inherit;
+  }
+
+  .theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .darkmode--activated .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  .theme-toggle svg path {
+    stroke: none;
+    fill: currentColor;
+  }
+
+  .theme-toggle svg circle,
+  .theme-toggle svg line {
+    stroke: currentColor;
+    fill: none;
+  }
+</style>
