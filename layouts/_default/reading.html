@@ -1,0 +1,78 @@
+{{ define "main" }}
+<div class="post-layout reading-page">
+  <article class="post typeface-{{ .Params.typeface }}"
+    lang="{{ .Params.lang | default $.Site.LanguageCode | default "en" }}">
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
+    {{ $items := site.Data.reading }}
+    {{ if $items }}
+
+    {{ $now := where $items "status" "eq" "current" }}
+    {{ if $now }}
+    <section class="reading-section" aria-label="Now">
+      <h2 class="reading-section-title">Now</h2>
+      <ul class="reading-list">
+        {{ range sort $now "started" "desc" }}
+        {{ $item := . }}
+        <li class="reading-item">
+          <span class="reading-tag reading-tag--{{ anchorize ($item.type | default "link") }}">{{ upper ($item.type | default "link") }}</span>
+          <div class="reading-body">
+            <a class="reading-title" href="{{ $item.link }}" target="_blank" rel="noopener">{{ $item.title }}</a>
+            {{ with $item.creator }}<span class="reading-creator">{{ . }}</span>{{ end }}
+            {{ with $item.note }}<span class="reading-note">{{ . }}</span>{{ end }}
+            {{ with $item.started }}<span class="reading-meta">since {{ dateFormat "Jan 2" (time.AsTime .) }}</span>{{ end }}
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{ $finished := where $items "status" "eq" "finished" }}
+    {{ if $finished }}
+    <section class="reading-section" aria-label="Finished">
+      <h2 class="reading-section-title">Finished</h2>
+      <ul class="reading-list">
+        {{ range sort $finished "finished" "desc" }}
+        {{ $item := . }}
+        <li class="reading-item">
+          <span class="reading-tag reading-tag--{{ anchorize ($item.type | default "link") }}">{{ upper ($item.type | default "link") }}</span>
+          <div class="reading-body">
+            <a class="reading-title" href="{{ $item.link }}" target="_blank" rel="noopener">{{ $item.title }}</a>
+            {{ with $item.creator }}<span class="reading-creator">{{ . }}</span>{{ end }}
+            {{ with $item.note }}<span class="reading-note">{{ . }}</span>{{ end }}
+            {{ with $item.finished }}<span class="reading-meta">{{ dateFormat "Jan 2006" (time.AsTime .) }}</span>{{ end }}
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{ $next := where $items "status" "eq" "next" }}
+    {{ if $next }}
+    <section class="reading-section" aria-label="Up next">
+      <h2 class="reading-section-title">Up Next</h2>
+      <ul class="reading-list">
+        {{ range $next }}
+        {{ $item := . }}
+        <li class="reading-item">
+          <span class="reading-tag reading-tag--{{ anchorize ($item.type | default "link") }}">{{ upper ($item.type | default "link") }}</span>
+          <div class="reading-body">
+            <a class="reading-title" href="{{ $item.link }}" target="_blank" rel="noopener">{{ $item.title }}</a>
+            {{ with $item.creator }}<span class="reading-creator">{{ . }}</span>{{ end }}
+            {{ with $item.note }}<span class="reading-note">{{ . }}</span>{{ end }}
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{ end }}
+  </article>
+</div>
+{{ end }}
