@@ -34,6 +34,7 @@ A fast and flexible static site generator built with love by [bep], [spf13], and
 - Active theme: [`themes/kagami`](https://github.com/mayocream/hugo-theme-kagami) (git submodule).
 - The previous `re-terminal` theme has been removed.
 - A local override exists at `layouts/partials/head.html` to keep Kagami compatible with newer Hugo versions (`.Site.Params.author` and `css.Sass`).
+- The `/reading/` page is data-driven: edit `data/reading.yaml` (`title`, `creator`, `link`, `type`, `status`, `note`...) and it renders via `layouts/_default/reading.html`. Works for any media type — books, articles, videos, podcasts. The homepage shows the 3 most recent `status: current` entries.
 
 ### Theme submodule maintenance
 

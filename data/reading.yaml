@@ -1,0 +1,69 @@
+# Your reading list — any kind of link works: books, articles, videos, podcasts.
+#
+# Each entry:
+#   title    (required)  Title of the thing
+#   creator  (optional)  Author, channel, or publication
+#   link     (required)  URL
+#   type     (required)  Shown as a tag, e.g. book | article | video | podcast
+#   status   (required)  current | finished | next
+#   started  (optional)  When you picked it up, YYYY-MM-DD (shown in "Now")
+#   finished (optional)  When you finished it, YYYY-MM-DD (shown in "Finished")
+#   note     (optional)  A short personal note
+#
+# The page is grouped by status into Now / Finished / Up Next sections.
+
+# --- Now ---
+
+- title: "Designing Data-Intensive Applications"
+  creator: "Martin Kleppmann"
+  link: "https://openlibrary.org/isbn/9781449373320"
+  type: "book"
+  status: "current"
+  started: 2026-07-10
+  note: "Dense in the best way. The chapters on replication and partitioning are worth every re-read."
+
+- title: "The Log: What every software engineer should know about real-time data's unifying abstraction"
+  creator: "Jay Kreps"
+  link: "https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying"
+  type: "article"
+  status: "current"
+  started: 2026-08-02
+
+- title: "Simple Made Easy"
+  creator: "Rich Hickey · Strange Loop"
+  link: "https://www.youtube.com/watch?v=SxdOUGdseq4"
+  type: "video"
+  status: "current"
+  started: 2026-08-04
+
+# --- Finished ---
+
+- title: "Thinking in Systems: A Primer"
+  creator: "Donella H. Meadows"
+  link: "https://openlibrary.org/isbn/9781603580557"
+  type: "book"
+  status: "finished"
+  finished: 2026-06-14
+  note: "Changed how I look at feedback loops, both in codebases and organizations."
+
+- title: "The Tail at Scale"
+  creator: "Jeff Dean, Luiz André Barroso · Communications of the ACM"
+  link: "https://cacm.acm.org/research/the-tail-at-scale/"
+  type: "article"
+  status: "finished"
+  finished: 2026-05-20
+  note: "Why tail latencies matter more than averages, and the standard tricks for taming them."
+
+# --- Up Next ---
+
+- title: "Surely You're Joking, Mr. Feynman!"
+  creator: "Richard P. Feynman"
+  link: "https://openlibrary.org/isbn/9780393316049"
+  type: "book"
+  status: "next"
+
+- title: "The Pragmatic Programmer"
+  creator: "David Thomas, Andrew Hunt"
+  link: "https://openlibrary.org/isbn/9780135957059"
+  type: "book"
+  status: "next"
