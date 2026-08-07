@@ -1,0 +1,11 @@
+{
+  "name": "Wahid Kadwaikar Blog",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "user": "ubuntu",
+  "install": "git submodule update --init --recursive",
+  "start": "hugo server -D --bind 0.0.0.0 --port 1313",
+  "ports": [1313]
+}
