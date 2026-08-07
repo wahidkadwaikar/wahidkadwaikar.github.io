@@ -19,3 +19,9 @@
   link: "https://shopify.engineering/scaling-inventory-reservations"
   type: "article"
   status: "current"
+
+- title: "Time, Clocks, and the Ordering of Events in a Distributed System"
+  creator: "Leslie Lamport"
+  link: "https://lamport.azurewebsites.net/pubs/time-clocks.pdf"
+  type: "article"
+  status: "current"
