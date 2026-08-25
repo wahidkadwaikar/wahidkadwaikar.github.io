@@ -4,7 +4,7 @@
 {{ $print := $note.Resources.GetMatch "note.*" }}
 {{ $location := $note.Params.location | default $note.Title }}
 {{ $number := printf "%03d" (int ($note.Params.number | default 0)) }}
-{{ $keywords := $note.Params.keywords }}
+{{ $legend := $note.Params.legend }}
 
 {{ if $linked }}
 <a class="field-note darkmode-ignore" href="{{ $note.RelPermalink }}">
@@ -26,7 +26,7 @@
       <div class="field-note-meta">
         <p class="field-note-location">{{ $location }}</p>
         <p class="field-note-number">No. {{ $number }}</p>
-        {{ with $keywords }}<p class="field-note-keywords">{{ . }}</p>{{ end }}
+        {{ with $legend }}<p class="field-note-keywords">{{ . }}</p>{{ end }}
         <p class="field-note-date">{{ $note.Date | time.Format "Jan 2, 2006" }}</p>
       </div>
     </div>
