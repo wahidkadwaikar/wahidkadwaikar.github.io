@@ -1,17 +1,9 @@
 {{ define "main" }}
-<section class="field-notes-page">
-  <header class="field-notes-header">
-    <p class="field-notes-kicker">Sketchbook</p>
-    <h1 class="field-notes-title">Field Notes</h1>
-    {{ with .Content }}
-    <div class="field-notes-intro">{{ . }}</div>
-    {{ end }}
-  </header>
-
+<div class="post-layout field-notes-page">
   <div class="field-notes-gallery">
     {{ range sort .Pages "Params.number" "desc" }}
     {{ partial "field-note.html" (dict "note" . "linked" true) }}
     {{ end }}
   </div>
-</section>
+</div>
 {{ end }}

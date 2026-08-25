@@ -1,7 +1,6 @@
 {{ $note := .note }}
 {{ $linked := .linked | default false }}
 {{ $photo := $note.Resources.GetMatch "photo.*" }}
-{{ $print := $note.Resources.GetMatch "note.*" }}
 {{ $location := $note.Params.location | default $note.Title }}
 {{ $number := printf "%03d" (int ($note.Params.number | default 0)) }}
 {{ $legend := $note.Params.legend }}
@@ -9,28 +8,18 @@
 {{ if $linked }}
 <a class="field-note-link" href="{{ $note.RelPermalink }}">
 {{ end }}
-<div class="field-note darkmode-ignore">
-  <div class="field-note-photo">
-    {{ with $photo }}
-    {{ $img := .Fill "720x960 q82 Center" }}
-    <img src="{{ $img.RelPermalink }}" alt="{{ $location }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
-    {{ end }}
+<article class="field-note">
+  {{ with $photo }}
+  {{ $img := .Resize "1200x q82" }}
+  <img class="field-note-photo" src="{{ $img.RelPermalink }}" alt="{{ $location }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+  {{ end }}
+  <div class="field-note-meta">
+    <p class="field-note-location">{{ $location }}</p>
+    <p class="field-note-number">No. {{ $number }}</p>
+    {{ with $legend }}<p class="field-note-keywords">{{ . }}</p>{{ end }}
+    <p class="field-note-date">{{ $note.Date | time.Format "Jan 2, 2006" }}</p>
   </div>
-  <div class="field-note-card">
-    <div class="field-note-paper">
-      {{ with $print }}
-      {{ $img := .Fit "560x720 q82" }}
-      <img class="field-note-print" src="{{ $img.RelPermalink }}" alt="" width="{{ $img.Width }}" height="{{ $img.Height }}" />
-      {{ end }}
-      <div class="field-note-meta">
-        <p class="field-note-location">{{ $location }}</p>
-        <p class="field-note-number">No. {{ $number }}</p>
-        {{ with $legend }}<p class="field-note-keywords">{{ . }}</p>{{ end }}
-        <p class="field-note-date">{{ $note.Date | time.Format "Jan 2, 2006" }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+</article>
 {{ if $linked }}
 </a>
 {{ end }}

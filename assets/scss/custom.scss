@@ -709,71 +709,19 @@ body:has(.home-page) .home-page {
 }
 
 /* Field notes gallery */
-body:has(.field-notes-page) {
-  background: #ebe4d8;
-}
-
-body:has(.field-notes-page) .page-content > .wrapper {
-  max-width: 720px;
-}
-
-body:has(.field-notes-page) .site-nav .page-link {
-  color: #3c3832;
-}
-
 .field-notes-page {
-  --paper: #f2ebe0;
-  --ink: #2b2620;
-  --muted: #6a6358;
-  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #3c3c3c;
   padding-bottom: 3rem;
 }
 
-.field-notes-header {
-  padding-top: 4.5rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  font-family: "Special Elite", "Courier New", Courier, monospace;
-}
-
-.field-notes-kicker {
-  margin: 0 0 0.4rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.field-notes-title {
-  margin: 0 0 0.85rem;
-  font-family: "Special Elite", "Courier New", Courier, monospace;
-  font-size: 1.85rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-}
-
-.field-notes-intro {
-  max-width: 36rem;
-  margin: 0 auto;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--muted);
-}
-
-.field-notes-intro p {
-  margin: 0;
-}
-
 .field-notes-back {
-  padding-top: 4.5rem;
   margin: 0 0 1.5rem;
-  font-family: "Special Elite", "Courier New", Courier, monospace;
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 
 .field-notes-back a {
-  color: var(--muted);
+  color: #8c8c8c;
   text-decoration: none;
   border-bottom: none;
   box-shadow: none;
@@ -781,19 +729,18 @@ body:has(.field-notes-page) .site-nav .page-link {
 
 .field-notes-back a:hover,
 .field-notes-back a:focus {
-  color: var(--ink);
+  color: #3c3c3c;
+  border-bottom: 2px solid #000;
 }
 
 .field-notes-gallery {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 a.field-note-link {
   display: block;
-  width: #{'min(100%, 34rem)'};
   text-decoration: none;
   color: inherit;
   border-bottom: none;
@@ -801,79 +748,15 @@ a.field-note-link {
   background: transparent;
 }
 
-a.field-note-link .field-note {
-  width: 100%;
-}
-
-.field-note {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: #{'min(100%, 34rem)'};
-  aspect-ratio: 3 / 2;
-  background: var(--paper);
-  box-shadow: 0 10px 28px rgba(48, 36, 22, 0.16);
-  overflow: hidden;
-}
-
-.field-note-photo,
-.field-note-card {
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
-}
-
 .field-note-photo {
-  background: #1c1c1c;
-}
-
-.field-note-photo img,
-.field-note-print {
   display: block;
   width: 100%;
-  height: 100%;
-  max-width: none;
-  min-width: 0;
-}
-
-.field-note-photo img {
-  object-fit: cover;
-}
-
-.field-note-card {
-  position: relative;
-  background-color: var(--paper);
-  background-image:
-    radial-gradient(rgba(90, 70, 40, 0.07) 0.6px, transparent 0.7px),
-    linear-gradient(180deg, rgba(255, 252, 245, 0.45), rgba(232, 222, 204, 0.35));
-  background-size: 3px 3px, 100% 100%;
-  display: flex;
-  padding: 0.45rem 0.5rem 0.55rem;
-}
-
-.field-note-paper {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.field-note-print {
-  display: block;
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
+  height: auto;
+  margin-bottom: 0.85rem;
 }
 
 .field-note-meta {
-  flex: 0 0 auto;
-  margin-top: 0.25rem;
-  text-align: center;
-  font-family: "Special Elite", "Courier New", Courier, monospace;
-  color: var(--ink);
-  line-height: 1.35;
+  line-height: 1.6;
 }
 
 .field-note-meta p {
@@ -881,34 +764,23 @@ a.field-note-link .field-note {
 }
 
 .field-note-location {
-  font-size: 0.78rem;
+  font-size: 1.1em;
+  font-weight: 500;
 }
 
 .field-note-number,
 .field-note-date {
-  font-size: 0.7rem;
+  color: #8c8c8c;
+  font-size: 0.9em;
 }
 
 .field-note-keywords {
-  font-size: 0.66rem;
-  color: #433e37;
-  margin: 0.05rem 0 !important;
+  color: #6c6c6c;
+  font-size: 0.95em;
 }
 
-a.field-note-link:hover .field-note,
-a.field-note-link:focus-visible .field-note {
-  box-shadow: 0 14px 32px rgba(48, 36, 22, 0.22);
-}
-
-@media (max-width: 760px) {
-  .field-notes-header,
-  .field-notes-back {
-    padding-top: 1.25rem;
-  }
-
-  .field-note {
-    width: 100%;
-  }
+a.field-note-link:hover .field-note-location {
+  border-bottom: 2px solid #000;
 }
 
 @media (max-width: 700px) {

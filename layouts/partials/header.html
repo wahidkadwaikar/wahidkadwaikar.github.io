@@ -1,4 +1,4 @@
-{{ if and (not .IsHome) (not .Params.hideHeader) (ne .Section "field-notes") }}
+{{ if and (not .IsHome) (not .Params.hideHeader) }}
 <header class="post-header">
   <h1 class="post-title baseline-fix typeface-{{ .Params.typeface | default " fallback" }}"
     lang="{{ .Params.lang | default $.Site.LanguageCode | default " en-us" }}" itemprop="name headline">{{ replace
