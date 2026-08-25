@@ -1,5 +1,4 @@
 {{ define "main" }}
-<div class="post-layout posts-page">
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
@@ -29,5 +28,4 @@
     </li>
 </ul>
 {{- end }}
-</div>
 {{ end }}
