@@ -7,10 +7,9 @@
 {{ $legend := $note.Params.legend }}
 
 {{ if $linked }}
-<a class="field-note darkmode-ignore" href="{{ $note.RelPermalink }}">
-{{ else }}
-<div class="field-note darkmode-ignore">
+<a class="field-note-link" href="{{ $note.RelPermalink }}">
 {{ end }}
+<div class="field-note darkmode-ignore">
   <div class="field-note-photo">
     {{ with $photo }}
     {{ $img := .Fill "720x960 q82 Center" }}
@@ -31,8 +30,7 @@
       </div>
     </div>
   </div>
+</div>
 {{ if $linked }}
 </a>
-{{ else }}
-</div>
 {{ end }}
