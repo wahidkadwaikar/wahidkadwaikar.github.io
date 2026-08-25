@@ -93,8 +93,24 @@
 }
 
 /* Post typography normalization to match homepage */
-.post-list {
+.post-list,
+.post-list .post-item-link,
+.post-list .post-description,
+.post-list .post-item-meta {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.post-list .post-item-link {
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #3c3c3c;
+}
+
+.post-list .post-item-meta {
+  font-variant-caps: normal;
+  font-size: 0.8em;
+  color: #8c8c8c;
 }
 
 .post-layout {
@@ -706,108 +722,6 @@ body:has(.home-page) .home-page {
   color: var(--home-muted);
   font-size: 1em;
   line-height: 1.6;
-}
-
-/* Reading list page */
-.reading-page {
-  --reading-text: #3c3c3c;
-  --reading-muted: #8c8c8c;
-  --reading-subtle: #6c6c6c;
-  --reading-border: #e5e5e5;
-}
-
-.reading-section {
-  margin-top: 2.5rem;
-}
-
-.reading-section-title {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.95em;
-  font-weight: 600;
-  color: var(--reading-muted);
-  margin: 0 0 1rem;
-}
-
-.reading-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-.reading-item {
-  display: flex;
-  gap: 0.9rem;
-  align-items: flex-start;
-}
-
-.reading-tag {
-  flex-shrink: 0;
-  width: 62px;
-  text-align: center;
-  font-family: 'JetBrains Mono', 'Source Code Pro', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
-  color: var(--reading-muted);
-  border: 1px solid var(--reading-border);
-  border-radius: 999px;
-  padding: 2px 0;
-  margin-top: 3px;
-  user-select: none;
-}
-
-.reading-body {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  line-height: 1.5;
-}
-
-.reading-title {
-  color: var(--reading-text);
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: none !important;
-  box-shadow: none !important;
-  background: transparent;
-  width: fit-content;
-}
-
-.reading-title:hover,
-.reading-title:focus {
-  border-bottom: 2px solid #000 !important;
-}
-
-.reading-creator {
-  color: var(--reading-subtle);
-  font-size: 0.88em;
-}
-
-.reading-note {
-  color: var(--reading-subtle);
-  font-size: 0.85em;
-}
-
-.reading-meta {
-  color: var(--reading-muted);
-  font-size: 0.76em;
-}
-
-/* Dark mode reading list */
-.darkmode--activated .reading-page {
-  --reading-text: #e0e0e0;
-  --reading-muted: #9a9a9a;
-  --reading-subtle: #b5b5b5;
-  --reading-border: #2d2d2d;
-}
-
-.darkmode--activated .reading-title:hover,
-.darkmode--activated .reading-title:focus {
-  border-bottom-color: #e0e0e0 !important;
 }
 
 @media (max-width: 700px) {

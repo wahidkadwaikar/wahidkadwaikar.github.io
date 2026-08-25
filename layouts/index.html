@@ -17,18 +17,6 @@
             </ul>
         </section>
 
-        {{ $reading := first 3 (sort (where site.Data.reading "status" "eq" "current") "started" "desc") }}
-        {{ if $reading }}
-        <section class="home-section">
-            <h2><a href="/reading/">Reading <span aria-hidden="true">›</span></a></h2>
-            <ul class="home-list">
-                {{ range $reading }}
-                <li><a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a></li>
-                {{ end }}
-            </ul>
-        </section>
-        {{ end }}
-
         <section class="home-section">
             <h2><a href="/projects/">Projects</a></h2>
             <ul class="home-projects">
