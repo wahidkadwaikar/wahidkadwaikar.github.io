@@ -13,14 +13,14 @@
 {{ end }}
   <div class="field-note-photo">
     {{ with $photo }}
-    {{ $img := .Resize "900x q82" }}
+    {{ $img := .Fill "720x960 q82 Center" }}
     <img src="{{ $img.RelPermalink }}" alt="{{ $location }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
     {{ end }}
   </div>
   <div class="field-note-card">
     <div class="field-note-paper">
       {{ with $print }}
-      {{ $img := .Resize "800x q82" }}
+      {{ $img := .Fit "560x720 q82" }}
       <img class="field-note-print" src="{{ $img.RelPermalink }}" alt="" width="{{ $img.Width }}" height="{{ $img.Height }}" />
       {{ end }}
       <div class="field-note-meta">

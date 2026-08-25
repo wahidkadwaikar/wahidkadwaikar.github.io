@@ -816,7 +816,7 @@ body:has(.field-notes-page) {
 }
 
 body:has(.field-notes-page) .page-content > .wrapper {
-  max-width: 1080px;
+  max-width: 720px;
 }
 
 body:has(.field-notes-page) .site-nav .page-link {
@@ -889,7 +889,8 @@ body:has(.field-notes-page) .site-nav .page-link {
 .field-notes-gallery {
   display: flex;
   flex-direction: column;
-  gap: 2.75rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 a.field-note {
@@ -903,13 +904,21 @@ a.field-note {
 .field-note {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: min(100%, 34rem);
+  aspect-ratio: 3 / 2;
   background: var(--paper);
-  box-shadow: 0 16px 40px rgba(48, 36, 22, 0.14);
+  box-shadow: 0 10px 28px rgba(48, 36, 22, 0.16);
   overflow: hidden;
 }
 
-.field-note-photo {
+.field-note-photo,
+.field-note-card {
+  min-width: 0;
   min-height: 0;
+  height: 100%;
+}
+
+.field-note-photo {
   background: #1c1c1c;
 }
 
@@ -918,7 +927,6 @@ a.field-note {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 3 / 4;
 }
 
 .field-note-card {
@@ -929,28 +937,32 @@ a.field-note {
     linear-gradient(180deg, rgba(255, 252, 245, 0.45), rgba(232, 222, 204, 0.35));
   background-size: 3px 3px, 100% 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.4rem 1.15rem 1.6rem;
+  padding: 0.45rem 0.5rem 0.55rem;
 }
 
 .field-note-paper {
   width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .field-note-print {
   display: block;
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  height: auto;
+  object-fit: contain;
   mix-blend-mode: multiply;
 }
 
 .field-note-meta {
-  margin-top: 0.85rem;
+  flex: 0 0 auto;
+  margin-top: 0.25rem;
   text-align: center;
   font-family: "Special Elite", "Courier New", Courier, monospace;
   color: var(--ink);
-  line-height: 1.55;
+  line-height: 1.35;
 }
 
 .field-note-meta p {
@@ -958,23 +970,23 @@ a.field-note {
 }
 
 .field-note-location {
-  font-size: 1.02rem;
+  font-size: 0.78rem;
 }
 
 .field-note-number,
 .field-note-date {
-  font-size: 0.92rem;
+  font-size: 0.7rem;
 }
 
 .field-note-keywords {
-  font-size: 0.88rem;
+  font-size: 0.66rem;
   color: #433e37;
-  margin: 0.12rem 0 !important;
+  margin: 0.05rem 0 !important;
 }
 
 a.field-note:hover,
 a.field-note:focus-visible {
-  box-shadow: 0 18px 44px rgba(48, 36, 22, 0.2);
+  box-shadow: 0 14px 32px rgba(48, 36, 22, 0.22);
 }
 
 @media (max-width: 760px) {
@@ -984,12 +996,7 @@ a.field-note:focus-visible {
   }
 
   .field-note {
-    grid-template-columns: 1fr;
-  }
-
-  .field-note-photo img {
-    aspect-ratio: 3 / 4;
-    max-height: 70vh;
+    width: 100%;
   }
 }
 
