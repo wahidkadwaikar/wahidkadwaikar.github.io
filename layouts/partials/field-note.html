@@ -1,0 +1,38 @@
+{{ $note := .note }}
+{{ $linked := .linked | default false }}
+{{ $photo := $note.Resources.GetMatch "photo.*" }}
+{{ $print := $note.Resources.GetMatch "note.*" }}
+{{ $location := $note.Params.location | default $note.Title }}
+{{ $number := printf "%03d" (int ($note.Params.number | default 0)) }}
+{{ $keywords := $note.Params.keywords }}
+
+{{ if $linked }}
+<a class="field-note darkmode-ignore" href="{{ $note.RelPermalink }}">
+{{ else }}
+<div class="field-note darkmode-ignore">
+{{ end }}
+  <div class="field-note-photo">
+    {{ with $photo }}
+    {{ $img := .Resize "900x q82" }}
+    <img src="{{ $img.RelPermalink }}" alt="{{ $location }}" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+    {{ end }}
+  </div>
+  <div class="field-note-card">
+    <div class="field-note-paper">
+      {{ with $print }}
+      {{ $img := .Resize "800x q82" }}
+      <img class="field-note-print" src="{{ $img.RelPermalink }}" alt="" width="{{ $img.Width }}" height="{{ $img.Height }}" />
+      {{ end }}
+      <div class="field-note-meta">
+        <p class="field-note-location">{{ $location }}</p>
+        <p class="field-note-number">No. {{ $number }}</p>
+        {{ with $keywords }}<p class="field-note-keywords">{{ . }}</p>{{ end }}
+        <p class="field-note-date">{{ $note.Date | time.Format "Jan 2, 2006" }}</p>
+      </div>
+    </div>
+  </div>
+{{ if $linked }}
+</a>
+{{ else }}
+</div>
+{{ end }}

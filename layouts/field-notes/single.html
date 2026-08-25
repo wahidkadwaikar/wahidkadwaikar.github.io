@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="field-notes-page field-notes-page--single">
+  <p class="field-notes-back">
+    <a href="{{ .CurrentSection.RelPermalink }}">← Field Notes</a>
+  </p>
+  {{ partial "field-note.html" (dict "note" . "linked" false) }}
+</section>
+{{ end }}
