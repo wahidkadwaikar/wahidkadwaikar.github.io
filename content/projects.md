@@ -3,6 +3,10 @@ title: "PROJECTS"
 date: 2026-01-01
 ---
 
+### [CurbColors](https://curbcolors-rho.vercel.app)
+
+curbcolors shows new art every time the curb changes color, pairing public-domain artworks with live color readings.
+
 ### [yanki](https://useyanki.dev)
 
 yanki encrypts your secret on your machine, uploads only encrypted data, and burns the note on read.
